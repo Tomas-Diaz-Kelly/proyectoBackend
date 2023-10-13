@@ -1,0 +1,27 @@
+
+
+
+// Actualizacion de product + Eliminacion de product
+
+/*
+
+    updateProduct(productCode, updatedProductData) {
+        const isCodeUnique = !this.products.some(product => product.code === updatedProductData.code);
+
+        if (isCodeUnique) {
+            this.products = this.products.map(product => {
+                if (product.code === productCode) {
+                    return { ...product, ...updatedProductData };
+                }
+                return product;
+            });
+        } else {
+            console.log("Error:yyy Ya existe un producto con el mismo código.");
+        }
+
+
+
+        removeProduct(productCode) {
+        this.products = this.products.filter(product => product.code !== productCode);
+    }
+    }*/
