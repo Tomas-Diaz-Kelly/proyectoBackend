@@ -68,7 +68,7 @@ class ProductManager {
             return updatedProductInstance;
         } else {
             console.log('Producto no encontrado.');
-            return null; // o lanzar un objeto indicando que el producto no fue encontrado
+            return null; 
         }
     }
     
@@ -81,7 +81,8 @@ class ProductManager {
             await this.#saveProducts();
             return deletedProduct;
         } else {
-            throw new Error('Producto no encontrado.');
+            console.log('Producto no encontrado.');
+            return null;
         }
     }
 }
