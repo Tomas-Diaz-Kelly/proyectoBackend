@@ -12,7 +12,7 @@ class Product {
     }
 }
 
-class ProductManager {
+export class ProductManager {
     #products;
 
     constructor({ filePath }) {
@@ -82,7 +82,7 @@ class ProductManager {
             await this.#saveProducts();
             return deletedProduct;
         } else {
-            console.log('Producto no encontrado.');
+            //console.log('Producto no encontrado.');
             return null;
         }
     }
@@ -90,7 +90,7 @@ class ProductManager {
 
 
 async function main() {
-    const pm = new ProductManager({ filePath: 'productos.json' });
+    const pm = new ProductManager({ filePath: '../db/productos.json' });
 
     await pm.addProduct({
         title: 'Producto 1',
@@ -108,18 +108,18 @@ async function main() {
         stock: 20
     });
 
-    console.log('Productos:', await pm.getProducts());
+   // console.log('Productos:', await pm.getProducts());
 
     const updatedProduct = await pm.updateProduct(1, {
         title: 'Producto 1 Actualizado',
         price: 39.99
     });
-    console.log('Producto actualizado:', updatedProduct);
+    //console.log('Producto actualizado:', updatedProduct);
 
     const deletedProduct = await pm.deleteProduct(2);
-    console.log('Producto eliminado:', deletedProduct);
+    //console.log('Producto eliminado:', deletedProduct);
 
-    console.log('Productos actualizados:', await pm.getProducts());
+    //console.log('Productos actualizados:', await pm.getProducts());
 }
 
 main();

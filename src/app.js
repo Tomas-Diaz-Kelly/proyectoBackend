@@ -1,5 +1,6 @@
 import express from 'express';
-
+import { PRODUCTOS_JSON , PORT } from "./config.js"
+import { ProductManager } from './ProductManager.js'
 
 
 const app = express();
@@ -31,3 +32,7 @@ app.get('/products/:pid', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
+app.listen(PORT, () => {
+    console.log(`Conectado al puerto: ${PORT}`)
+  })
